@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitCoach AI | Workout Intelligence</title>
+<style>
+:root{--bg:#101512;--panel:#1a211c;--line:#344039;--text:#edf2eb;--muted:#adb9af;--lime:#d5f788}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;font-size:15px}button,input,select{font:inherit}header{border-bottom:1px solid var(--line)}nav{max-width:1220px;margin:auto;padding:23px 30px;display:flex;justify-content:space-between;align-items:center}.logo{font-weight:800;letter-spacing:-1px;font-size:24px}.logo span{color:var(--lime)}.tag,.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase}.tag{color:var(--lime);border:1px solid var(--line);padding:9px 12px;border-radius:30px}.wrap{max-width:1220px;margin:auto;padding:40px 30px}.hero{display:grid;grid-template-columns:1fr 240px;align-items:center;margin-bottom:35px}.eyebrow{color:var(--lime)}h1{font-size:clamp(34px,5vw,58px);letter-spacing:-2px;line-height:1.08;margin:15px 0}h1 span{color:var(--lime)}.intro{max-width:570px;color:var(--muted);line-height:1.7}.graphic{width:230px;height:160px}.layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;align-items:start}.card{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:28px}.card-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}h2{font-size:22px;letter-spacing:-.5px;margin:0}.pill{background:#2a342c;color:var(--lime);border-radius:6px;font-size:11px;padding:7px 9px}.section{margin:26px 0 15px;color:var(--muted);font-size:11px;letter-spacing:1.6px;text-transform:uppercase}.section:first-of-type{margin-top:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field label{display:block;font-size:12px;color:#c4cfc6;margin-bottom:9px}.field input,.field select{width:100%;color:var(--text);background:#111813;border:1px solid var(--line);padding:12px;border-radius:8px;outline:none;min-height:45px}.field input:focus,.field select:focus{border-color:var(--lime);box-shadow:0 0 0 3px #d5f78816}.helper{font-size:11px;color:var(--muted);margin:10px 0 0;line-height:1.6}.actions{display:flex;gap:12px;margin-top:27px}button{border:0;border-radius:9px;cursor:pointer;padding:14px 18px;font-weight:700}.primary{background:var(--lime);color:#172011;flex:1}.secondary{border:1px solid var(--line);background:transparent;color:var(--text)}button:disabled{cursor:wait;opacity:.55}button:hover:not(:disabled){filter:brightness(1.07)}.error{border:1px solid #af655b;background:#38211e;color:#ffcdc5;border-radius:10px;padding:14px;line-height:1.6;margin-bottom:20px}.error p{margin:5px 0}.empty{padding:38px 8px;text-align:center}.empty svg{width:100px;height:85px;margin-bottom:18px}.empty h3{font-size:21px}.empty p{color:var(--muted);line-height:1.7;max-width:290px;margin:12px auto}.result-main{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric{background:#111813;border:1px solid var(--line);border-radius:12px;padding:19px 16px}.metric small{font-size:11px;color:var(--muted)}.metric strong{display:block;font-size:32px;color:var(--lime);letter-spacing:-1px;margin:14px 0 7px}.metric .unit{color:var(--muted);font-size:11px}.risk-High{color:#f8a194!important}.risk-Moderate{color:#f4d07c!important}.risk-Low{color:var(--lime)!important}.prob-row{display:flex;justify-content:space-between;font-size:12px;margin:16px 0 7px}.track{height:6px;background:#344039;border-radius:5px;overflow:hidden}.fill{height:100%;background:var(--lime);border-radius:5px}.details{margin-top:24px;border-top:1px solid var(--line)}.detail{display:flex;justify-content:space-between;gap:15px;padding:14px 0;border-bottom:1px solid #2d3830;font-size:12px}.detail span{color:var(--muted)}.detail strong{text-align:right}.note{margin-top:18px;font-size:12px;color:var(--muted);line-height:1.7}.note strong{color:var(--text)}.models{font-size:11px;line-height:1.8;color:var(--muted);margin-top:16px}.status{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;margin-bottom:22px}.dot{width:7px;height:7px;border-radius:50%;background:var(--lime)}footer{max-width:1220px;margin:12px auto 0;padding:24px 30px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:11px;line-height:1.6}[hidden]{display:none!important}@media(max-width:850px){.layout{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.graphic{display:none}.wrap{padding:30px 18px}nav{padding:20px 18px}.card{padding:22px}footer{padding:22px 18px}}@media(max-width:430px){.grid{grid-template-columns:1fr}.tag{font-size:9px;letter-spacing:1px}.result-main{grid-template-columns:1fr 1fr}.metric{padding:16px 12px}footer{display:block}.actions{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header><nav><div class="logo">FitCoach<span> AI.</span></div><div class="tag">Workout intelligence</div></nav></header>
+<main class="wrap">
+<section class="hero"><div><div class="eyebrow">Know your workout</div><h1>Your effort.<br><span>A clearer picture.</span></h1><p class="intro">Turn your session details into a calorie estimate and a fitness risk category. Two trained models, one simple workout profile.</p></div>
+<svg class="graphic" viewBox="0 0 240 160" fill="none" aria-hidden="true"><circle cx="125" cy="80" r="66" stroke="#344039"/><circle cx="125" cy="80" r="48" stroke="#344039" stroke-dasharray="3 9"/><path d="M15 86H57L71 57L91 116L114 30L140 92L158 70H225" stroke="#d5f788" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="225" cy="70" r="6" fill="#d5f788"/></svg>
+</section>
+{% if setup_errors %}<div class="error" role="alert"><strong>One-time model setup needed</strong>{% for message in setup_errors %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}
+<div id="error" class="error" role="alert" hidden></div>
+<div class="layout">
+<section class="card"><div class="card-heading"><h2>Workout profile</h2><span class="pill">01 / INPUT</span></div>
+<form id="workout-form">
+<div class="section">Body &amp; experience</div><div class="grid">
+{% for key in ['age','weight','height','fat'] %}{% for f in fields if f[0] == key %}<div class="field"><label for="{{ f[0] }}">{{ f[1] }}</label><input id="{{ f[0] }}" name="{{ f[0] }}" type="number" min="{{ f[2] }}" max="{{ f[3] }}" step="{{ f[4] }}" value="{{ f[5] }}" required></div>{% endfor %}{% endfor %}
+{% for key in ['gender','experience'] %}<div class="field"><label for="{{ key }}">{{ options[key][0] }}</label><select id="{{ key }}" name="{{ key }}" required>{% for value in options[key][1] %}<option value="{{ value }}">{% if key == 'experience' %}{{ {'1':'Beginner','2':'Intermediate','3':'Advanced'}[value] }}{% else %}{{ value }}{% endif %}</option>{% endfor %}</select></div>{% endfor %}
+</div>
+<div class="section">Session &amp; heart rate</div><div class="grid">
+<div class="field"><label for="workout">Workout type</label><select id="workout" name="workout" required>{% for value in options['workout'][1] %}<option>{{ value }}</option>{% endfor %}</select></div>
+{% for key in ['duration','max_bpm','avg_bpm','resting_bpm','frequency','water'] %}{% for f in fields if f[0] == key %}<div class="field"><label for="{{ f[0] }}">{{ f[1] }}</label><input id="{{ f[0] }}" name="{{ f[0] }}" type="number" min="{{ f[2] }}" max="{{ f[3] }}" step="{{ f[4] }}" value="{{ f[5] }}" required></div>{% endfor %}{% endfor %}
+</div><p class="helper">Use your measured session heart rates. Duration: 1.5 hours = 90 minutes. BMI is calculated automatically.</p>
+<div class="actions"><button class="primary" id="predict-button" type="submit" {% if not ready %}disabled{% endif %}>Analyze my workout &rarr;</button><button class="secondary" id="reset-button" type="reset">Reset</button></div>
+</form></section>
+<aside class="card" aria-label="Workout results"><div class="card-heading"><h2>Your insights</h2><span class="pill">02 / RESULTS</span></div>
+<div class="status"><span class="dot" style="{% if not ready %}background:#f4d07c{% endif %}"></span>{{ 'Both models ready' if ready else 'Waiting for model setup' }}</div>
+<div id="empty" class="empty"><svg viewBox="0 0 100 85" fill="none" aria-hidden="true"><rect x="7" y="7" width="86" height="70" rx="15" stroke="#344039"/><path d="M22 53L37 41L49 49L72 28" stroke="#d5f788" stroke-width="3" stroke-linecap="round"/><path d="M61 28H72V39" stroke="#d5f788" stroke-width="3" stroke-linecap="round"/></svg><h3>Make your session count.</h3><p>Enter your workout details and analyze your session to see both predictions here.</p></div>
+<div id="results" aria-live="polite" hidden>
+<div class="result-main"><div class="metric"><small>Estimated calories</small><strong id="calories">—</strong><span class="unit">kcal / session</span></div><div class="metric"><small>Fitness risk category</small><strong id="risk">—</strong><span class="unit">model prediction</span></div></div>
+<div class="section">Model class probabilities</div><div id="probabilities"></div>
+<div class="details"><div class="detail"><span>Calculated BMI</span><strong id="bmi"></strong></div><div class="detail"><span>Workout intensity</span><strong id="intensity"></strong></div><div class="detail"><span>Weekly workout hours</span><strong id="weekly"></strong></div><div class="detail"><span>Notebook rule score</span><strong id="score"></strong></div></div>
+<p id="disagreement" class="note" hidden></p><div id="models" class="models"></div>
+</div>
+<p class="note"><strong>About the risk category:</strong> This label follows your project's BMI, body fat, heart rate and workout load rules. It is a project category, not a medical assessment. Calories are estimates; model probabilities do not measure clinical risk.</p>
+</aside></div>
+</main><footer><span>FitCoach AI · Personal Workout Intelligence System</span><span>Classification + regression · Built from your notebooks</span></footer>
+<script>
+const form = document.getElementById('workout-form');
+const button = document.getElementById('predict-button');
+const errorBox = document.getElementById('error');
+const results = document.getElementById('results');
+const empty = document.getElementById('empty');
+const resetButton = document.getElementById('reset-button');
+const modelsReady = {{ ready | tojson }};
+function setText(id, value) { document.getElementById(id).textContent = value; }
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  errorBox.hidden = true;
+  results.hidden = true;
+  empty.hidden = false;
+  button.disabled = true;
+  resetButton.disabled = true;
+  button.textContent = 'Analyzing your workout…';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30000);
+  try {
+    const response = await fetch('/predict', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(Object.fromEntries(new FormData(form))), signal:controller.signal});
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'Could not complete prediction.');
+    setText('calories', data.calories.toLocaleString());
+    setText('risk', data.risk);
+    document.getElementById('risk').className = 'risk-' + data.risk;
+    setText('bmi', data.bmi + ' · ' + data.bmi_category);
+    setText('intensity', data.intensity + ' · ' + data.intensity_percent + '%');
+    setText('weekly', data.weekly_hours + ' hours');
+    setText('score', data.risk_score + ' / 5 · ' + data.rule_risk);
+    setText('models', data.classification_model + ' · ' + data.regression_model);
+    const probabilities = document.getElementById('probabilities');
+    probabilities.replaceChildren();
+    for (const item of data.probabilities) {
+      const row = document.createElement('div'); row.className = 'prob-row';
+      const label = document.createElement('span'); label.textContent = item.label;
+      const value = document.createElement('span'); value.textContent = item.value + '%';
+      row.append(label, value);
+      const track = document.createElement('div'); track.className = 'track';
+      const fill = document.createElement('div'); fill.className = 'fill'; fill.style.width = Math.max(0, Math.min(100, item.value)) + '%';
+      track.append(fill); probabilities.append(row, track);
+    }
+    const disagreement = document.getElementById('disagreement');
+    disagreement.hidden = data.risk === data.rule_risk;
+    disagreement.textContent = 'The model predicts ' + data.risk + ', while the original notebook rules give ' + data.rule_risk + '. A learned model can differ from the rule that generated its labels.';
+    empty.hidden = true; results.hidden = false;
+  } catch (error) {
+    errorBox.textContent = error.name === 'AbortError' ? 'Prediction timed out. Please try again.' : error.message;
+    errorBox.hidden = false;
+    errorBox.scrollIntoView({behavior:'smooth', block:'center'});
+  } finally {
+    clearTimeout(timeout); button.disabled = !modelsReady; resetButton.disabled = false; button.textContent = 'Analyze my workout →';
+  }
+});
+form.addEventListener('reset', () => { results.hidden = true; empty.hidden = false; errorBox.hidden = true; });
+</script>
+</body>
+</html>

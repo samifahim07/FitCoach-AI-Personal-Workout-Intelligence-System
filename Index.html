@@ -161,6 +161,22 @@ a.pg:hover{transform:translateY(-6px);background:#222}
 .tabs button{font-size:20px;padding:14px 26px}
 @media(max-width:880px){.hgrid{grid-template-columns:1fr}.hero2 .gp{display:none}.sample{max-width:320px}.start{grid-template-columns:1fr 1fr}.nbtn{display:none}}
 @media(prefers-reduced-motion:reduce){.ecg path{animation:none;stroke-dashoffset:0}.start a,a.pg{transition:none}}
+
+.tw{font:400 clamp(26px,2.6vw,52px)/1.15 var(--disp);text-transform:uppercase;color:var(--tx);margin:0;min-height:3.5em}
+.tw::after{content:"";display:inline-block;width:.1em;height:.9em;background:var(--hot);margin-left:6px;vertical-align:-.08em;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.tw.inl{font-size:24px;border-left:5px solid var(--hot);padding-left:14px;margin-top:30px;max-width:28ch;min-height:3.4em}
+.gl,.gr{display:none}
+@media(min-width:1500px){
+ .tw.inl{display:none}
+ .gl{display:block;position:absolute;z-index:1;left:32px;top:50%;transform:translateY(-50%);width:calc((100% - 1120px)/2 - 70px)}
+ .gl .tw{color:var(--hot)}
+ .gr{display:block;position:absolute;z-index:1;top:0;bottom:0;right:0;width:calc((100% - 1120px)/2 - 20px);overflow:hidden}
+ .gr .run{animation:vm 26s linear infinite}
+ .gr .txt{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font:400 clamp(60px,6vw,110px)/1 var(--disp);color:#000;text-align:left;margin:0 auto;width:1.1em}
+}
+@keyframes vm{to{transform:translateY(-50%)}}
+@media(prefers-reduced-motion:reduce){.gr .run,.tw::after{animation:none}}
 </style>
 </head>
 <body>
@@ -170,11 +186,14 @@ a.pg:hover{transform:translateY(-6px);background:#222}
 <section class="hero2" id="top">
   <svg class="ecg" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 100H300L330 100L350 40L380 170L405 20L430 100H700L730 100L750 60L775 140L795 100H1200"/></svg>
   <div class="gp"></div>
+  <div class="gl"><p class="tw" data-gutter></p></div>
+  <div class="gr" aria-hidden="true"><div class="run"><div class="txt">FITCOACH AI &#9679; FITCOACH AI &#9679; FITCOACH AI &#9679; FITCOACH AI &#9679; FITCOACH AI &#9679; FITCOACH AI &#9679; FITCOACH AI &#9679; FITCOACH AI &#9679; </div></div></div>
   <div class="wrap hgrid">
     <div>
       <h1>Train hard.<br>Track every <span>beat.</span></h1>
       <p>Bodybuilding history, weekly workout plans and nutrition tips in one place. Then check how many calories your session burned.</p>
       <div class="cta"><a class="btn" href="#checker">Check my workout</a><a class="btn ghost" href="#plans">See exercise plans</a></div>
+      <p class="tw inl"></p>
     </div>
     <div class="sample" aria-label="Example result">
       <small>Example result</small>
@@ -370,6 +389,20 @@ document.querySelectorAll("a.pg[data-w]").forEach(a => a.addEventListener("click
 const secs = [...document.querySelectorAll("nav .links a")];
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) secs.forEach(l => l.classList.toggle("on", l.getAttribute("href") === "#" + e.target.id)); }), {rootMargin: "-45% 0px -50% 0px"});
 secs.forEach(l => { const t = document.querySelector(l.getAttribute("href")); if (t) io.observe(t); });
+const QUOTES = ["Every rep counts. Show up today.", "Small steps every day build a strong body.", "Your only rival is who you were yesterday.", "Sweat now. Shine later.", "Discipline beats motivation.", "Stronger than yesterday."];
+document.querySelectorAll(".tw").forEach((el, k) => {
+  let q = k % QUOTES.length;
+  const still = matchMedia("(prefers-reduced-motion:reduce)").matches;
+  const run = () => {
+    const t = QUOTES[q]; let i = 0;
+    if (still) { el.textContent = t; q = (q + 1) % QUOTES.length; return setTimeout(run, 4000); }
+    const type = () => { el.textContent = t.slice(0, ++i);
+      if (i < t.length) setTimeout(type, 55); else { q = (q + 1) % QUOTES.length; setTimeout(erase, 2200); } };
+    const erase = () => { el.textContent = t.slice(0, --i); if (i > 0) setTimeout(erase, 22); else setTimeout(run, 300); };
+    type();
+  };
+  run();
+});
 // live value next to each slider
 document.querySelectorAll("input[type=range]").forEach(r => {
   const o = document.querySelector(`output[for=${r.id}]`);

@@ -1,0 +1,7 @@
+   flask
+   gunicorn
+   catboost
+   xgboost
+   scikit-learn
+   pandas
+   numpy
